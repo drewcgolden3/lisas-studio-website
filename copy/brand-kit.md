@@ -173,6 +173,7 @@ Lisa's Studio isn't a product — it's an **experience and a service**. This sec
 **What's offered:**
 - **Personal Training** — one-on-one sessions fully tailored to your goals, fitness level, history, and any injuries or limitations. Attentive, hands-on, adaptive.
 - **Group Fitness Classes** — small, welcoming classes that keep the personal touch: proper form, real coaching, and a supportive, low-pressure atmosphere.
+- **Private Swim Lessons** — Lisa travels to a family's own pool and teaches there: water comfort, safety, and real swimming skills for kids, adults, and nervous swimmers.
 
 **Who it's for:** beginners, returners, active agers, and anyone who's never felt at home in a gym.
 
@@ -219,8 +220,9 @@ Modernize Lisa's Studio's online presence into a **warm, credible, mobile-friend
 4. **Builds trust** through experience, credentials, setting, and real client stories.
 5. **Drives the primary action: _Book a Class_** — a clear, prominent CTA repeated throughout the page, plus easy call/contact options.
 
-**Primary CTA:** **Book a Class**
-**Secondary CTAs:** Call the studio (508-693-1009) · Email (amols@comcast.net) · Ask a question
+**Primary CTA:** **Call the studio (508-693-1009)** — Lisa answers personally
+**Secondary CTA:** **Request a booking** (form: Personal Training / Group Classes / Private Swim Lessons)
+**Tertiary:** Email (amols@comcast.net)
 
 ---
 

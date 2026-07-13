@@ -164,6 +164,16 @@ p { margin: 0 0 1em; }
   color: var(--sand);
 }
 
+.btn--secondary {
+  background: var(--forest);
+  color: var(--sand);
+}
+.btn--secondary:hover {
+  background: var(--pine);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(44, 62, 46, 0.3);
+}
+
 .btn--lg { padding: 17px 34px; font-size: 17px; }
 .btn--block { width: 100%; }
 
@@ -357,7 +367,8 @@ p { margin: 0 0 1em; }
 .welcome { padding-bottom: 48px; }
 
 /* ---------- Approach ---------- */
-.approach__art svg {
+.approach__art img {
+  width: 100%;
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
 }
@@ -389,17 +400,17 @@ p { margin: 0 0 1em; }
 /* ---------- Offerings ---------- */
 .offerings { background: var(--cream); }
 
-.cards-2 {
+.cards-3 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
 }
 
 .offer-card {
   background: var(--sand);
   border: 1px solid var(--oat);
   border-radius: var(--radius);
-  padding: 40px 36px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   transition: transform 250ms ease, box-shadow 250ms ease;
@@ -409,17 +420,23 @@ p { margin: 0 0 1em; }
   box-shadow: var(--shadow-lift);
 }
 
-.offer-card__icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
-  background: var(--forest);
-  color: var(--sand);
-  display: grid;
-  place-items: center;
-  margin-bottom: 22px;
+.offer-card__photo {
+  height: 200px;
+  flex: none;
 }
-.offer-card__icon svg { width: 30px; height: 30px; }
+.offer-card__photo img,
+.offer-card__photo svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.offer-card__body {
+  padding: 28px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 
 .offer-card p { color: var(--stone); }
 
@@ -509,6 +526,10 @@ p { margin: 0 0 1em; }
   overflow: hidden;
   box-shadow: var(--shadow-lift);
 }
+.portrait-frame img {
+  width: 100%;
+  display: block;
+}
 
 .portrait-badge {
   position: absolute;
@@ -543,7 +564,7 @@ p { margin: 0 0 1em; }
   overflow: hidden;
   box-shadow: var(--shadow-soft);
 }
-.tile svg { width: 100%; height: 100%; object-fit: cover; }
+.tile img { width: 100%; height: 100%; object-fit: cover; }
 .tile--tall { grid-row: span 2; }
 .tile--wide { grid-column: span 2; }
 
@@ -680,10 +701,12 @@ p { margin: 0 0 1em; }
   max-width: 420px;
 }
 
+.contact__call { margin: 6px 0 8px; }
+
 .contact__list {
   list-style: none;
   padding: 0;
-  margin: 34px 0 0;
+  margin: 30px 0 0;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -708,8 +731,18 @@ p { margin: 0 0 1em; }
 .booking {
   background: var(--cream);
   border-radius: var(--radius);
-  padding: 40px 36px;
+  padding: 36px 36px 40px;
   box-shadow: var(--shadow-lift);
+}
+
+.booking__title {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+.booking__sub {
+  font-size: 14.5px;
+  color: var(--stone);
+  margin-bottom: 24px;
 }
 
 .field { margin-bottom: 20px; display: flex; flex-direction: column; }
@@ -870,6 +903,7 @@ p { margin: 0 0 1em; }
 
   .benefit-grid { grid-template-columns: 1fr 1fr; }
   .quote-grid { grid-template-columns: 1fr; }
+  .cards-3 { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
 
   .studio__gallery {
     grid-template-columns: 1fr 1fr;
@@ -889,7 +923,6 @@ p { margin: 0 0 1em; }
   .hero__actions .btn { width: 100%; }
   .hero__sun { width: 220px; height: 220px; right: -40px; }
 
-  .cards-2 { grid-template-columns: 1fr; }
   .benefit-grid { grid-template-columns: 1fr; }
   .field-row { grid-template-columns: 1fr; }
 

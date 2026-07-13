@@ -53,7 +53,13 @@
   const revealTargets = document.querySelectorAll(
     ".section__head, .grid-2 > *, .offer-card, .benefit, .quote, .acc-item, .booking, .contact__info"
   );
-  revealTargets.forEach((el) => el.classList.add("reveal"));
+  // Elements already on screen (including anchor deep-links) show immediately;
+  // everything below the fold animates in on scroll.
+  revealTargets.forEach((el) => {
+    el.classList.add("reveal");
+    const r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) el.classList.add("is-visible");
+  });
 
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(
@@ -75,6 +81,21 @@
   /* ---------- Booking form ---------- */
   const form = document.getElementById("bookingForm");
   const note = document.getElementById("formNote");
+  const interest = document.getElementById("interest");
+  const poolField = document.getElementById("poolField");
+
+  const syncPoolField = () => {
+    poolField.hidden = interest.value !== "Private Swim Lessons";
+  };
+  interest.addEventListener("change", syncPoolField);
+
+  // Offer-card links pre-select the matching service in the form
+  document.querySelectorAll(".book-link").forEach((link) =>
+    link.addEventListener("click", () => {
+      interest.value = link.dataset.interest;
+      syncPoolField();
+    })
+  );
 
   const setError = (input, message) => {
     const err = form.querySelector('.err[data-for="' + input.id + '"]');
@@ -124,18 +145,20 @@
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
     const phone = document.getElementById("phone").value.trim();
-    const interest = document.getElementById("interest").value;
+    const service = interest.value;
+    const pool = document.getElementById("pool").value.trim();
     const message = document.getElementById("message").value.trim();
 
-    const subject = "Class request from " + name + " — " + interest;
+    const subject = "Booking request from " + name + " — " + service;
     const bodyLines = [
       "Hi Lisa,",
       "",
-      "I'd like to book: " + interest,
+      "I'd like to book: " + service,
       "",
       "Name: " + name,
       "Email: " + email,
       phone ? "Phone: " + phone : "",
+      service === "Private Swim Lessons" && pool ? "Pool location: " + pool : "",
       message ? "Notes: " + message : "",
     ].filter(Boolean);
 
@@ -147,6 +170,7 @@
 
     note.textContent = "Opening your email app — send the message and we'll get back to you!";
     form.reset();
+    syncPoolField();
   });
 
   /* ---------- Footer year ---------- */
