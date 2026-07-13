@@ -300,18 +300,27 @@ p { margin: 0 0 1em; }
 }
 
 .hero__bg { position: absolute; inset: 0; z-index: -1; }
-.hero__scene { width: 100%; height: 100%; }
 
-.hero__sun {
+.hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Keep Lisa (seated ~40% across the photo) right of the headline text */
+  object-position: 12% center;
+}
+
+.hero__scrim {
   position: absolute;
-  top: 8%;
-  right: 12%;
-  width: 340px;
-  height: 340px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(201, 123, 90, 0.35), transparent 65%);
-  filter: blur(6px);
-  pointer-events: none;
+  inset: 0;
+  background:
+    linear-gradient(90deg,
+      rgba(247, 243, 236, 0.96) 0%,
+      rgba(247, 243, 236, 0.85) 32%,
+      rgba(247, 243, 236, 0.35) 62%,
+      rgba(247, 243, 236, 0.05) 100%),
+    linear-gradient(0deg,
+      rgba(247, 243, 236, 0.85) 0%,
+      rgba(247, 243, 236, 0) 24%);
 }
 
 .hero__inner { max-width: 640px; }
@@ -921,7 +930,16 @@ p { margin: 0 0 1em; }
 
   .hero { padding-top: calc(var(--nav-h) + 24px); }
   .hero__actions .btn { width: 100%; }
-  .hero__sun { width: 220px; height: 220px; right: -40px; }
+  .hero__scrim {
+    background:
+      linear-gradient(90deg,
+        rgba(247, 243, 236, 0.94) 0%,
+        rgba(247, 243, 236, 0.88) 60%,
+        rgba(247, 243, 236, 0.72) 100%),
+      linear-gradient(0deg,
+        rgba(247, 243, 236, 0.9) 0%,
+        rgba(247, 243, 236, 0) 24%);
+  }
 
   .benefit-grid { grid-template-columns: 1fr; }
   .field-row { grid-template-columns: 1fr; }
