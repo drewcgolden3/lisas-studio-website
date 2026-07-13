@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lisa's Studio — Your Gym Alternative | Personal Training &amp; Group Fitness, Martha's Vineyard</title>
+  <meta name="description" content="Lisa's Studio is the warm, personal alternative to the gym on Martha's Vineyard. AFAA-certified, 35+ years of experience. One-on-one personal training and small group classes in a calm woodland setting. Book a class today." />
+
+  <meta property="og:title" content="Lisa's Studio — Your Gym Alternative" />
+  <meta property="og:description" content="Personal training &amp; small group fitness classes in a calm woodland studio on Martha's Vineyard. No crowds, no intimidation — just you, moving well." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= NAV ================= -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="#top" aria-label="Lisa's Studio home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" width="40" height="40" role="img">
+            <path class="leaf-stroke" d="M8 32 C 8 16, 20 6, 33 7 C 33 22, 22 33, 8 32 Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="leaf-vein" d="M12 30 C 20 24, 26 18, 30 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand__text">
+          <span class="brand__name">Lisa's Studio</span>
+          <span class="brand__sub">Personal Training &amp; Group Fitness</span>
+        </span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#approach">Approach</a>
+        <a href="#offerings">Training</a>
+        <a href="#lisa">About</a>
+        <a href="#studio">The Studio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a href="#contact" class="btn btn--primary nav__cta">Book a Class</a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <a href="#approach">Approach</a>
+      <a href="#offerings">Training</a>
+      <a href="#lisa">About</a>
+      <a href="#studio">The Studio</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn btn--primary">Book a Class</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <span id="top"></span>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__sun"></div>
+        <svg class="hero__scene" viewBox="0 0 1440 720" preserveAspectRatio="xMidYMax slice" role="img" aria-hidden="true">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#f4efe4"/>
+              <stop offset="100%" stop-color="#efe6d4"/>
+            </linearGradient>
+            <linearGradient id="hillA" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#8AA089"/>
+              <stop offset="100%" stop-color="#6f8a70"/>
+            </linearGradient>
+            <linearGradient id="hillB" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#556e56"/>
+              <stop offset="100%" stop-color="#3E5641"/>
+            </linearGradient>
+          </defs>
+          <rect width="1440" height="720" fill="url(#sky)"/>
+          <path d="M0 560 C 260 510, 520 545, 760 530 C 1010 515, 1230 555, 1440 530 L1440 720 L0 720 Z" fill="url(#hillA)" opacity="0.55"/>
+          <path d="M0 630 C 300 590, 560 630, 820 615 C 1080 600, 1260 640, 1440 615 L1440 720 L0 720 Z" fill="url(#hillB)" opacity="0.85"/>
+          <g opacity="0.5" fill="#3E5641">
+            <path d="M180 630 c -24 -60, -7 -128, 19 -128 c 26 0, 43 68, 19 128 z"/>
+            <path d="M1240 618 c -28 -72, -8 -154, 23 -154 c 31 0, 51 82, 23 154 z"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="container hero__inner">
+        <p class="eyebrow">Martha's Vineyard · West Tisbury</p>
+        <h1 class="hero__title">Your gym<br/><em>alternative.</em></h1>
+        <p class="hero__lead">
+          Fitness that actually feels good. Real one-on-one attention in a calm,
+          welcoming woodland studio — for people who don't love the gym.
+        </p>
+        <div class="hero__actions">
+          <a href="#contact" class="btn btn--primary btn--lg">Book a Class</a>
+          <a href="tel:+15086931009" class="btn btn--ghost btn--lg">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 5c0 8.3 6.7 15 15 15a2 2 0 0 0 2-2v-2.3a1 1 0 0 0-.8-1l-3.3-.7a1 1 0 0 0-1 .3l-1 1a12 12 0 0 1-5.5-5.5l1-1a1 1 0 0 0 .3-1L9.3 4.8a1 1 0 0 0-1-.8H6a2 2 0 0 0-2 2Z"/></svg>
+            Call the studio
+          </a>
+        </div>
+        <ul class="hero__trust">
+          <li><strong>35+ years</strong> of experience</li>
+          <li><strong>AFAA</strong> certified</li>
+          <li><strong>No crowds.</strong> No intimidation.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= WELCOME ================= -->
+    <section class="section welcome" aria-labelledby="welcome-h">
+      <div class="container narrow center">
+        <p class="eyebrow">Welcome</p>
+        <h2 id="welcome-h" class="h2">A friendlier way to move.</h2>
+        <p class="lead-muted">
+          Lisa's Studio is a small, private studio tucked into a natural woodland setting —
+          the warm, personal alternative to a crowded commercial gym. Here you're a name,
+          not a membership number, and every session is built around you.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= APPROACH ================= -->
+    <section class="section approach" id="approach" aria-labelledby="approach-h">
+      <div class="container grid-2">
+        <div class="approach__art" aria-hidden="true">
+          <svg viewBox="0 0 400 340" width="100%" role="img">
+            <rect width="400" height="340" rx="24" fill="#eef1e9"/>
+            <circle cx="200" cy="150" r="92" fill="#dfe6da"/>
+            <path d="M200 60 C 150 110, 150 190, 200 240 C 250 190, 250 110, 200 60 Z" fill="#8AA089"/>
+            <path d="M200 78 C 200 130, 200 190, 200 232" stroke="#3E5641" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M200 120 C 176 128, 162 146, 156 168 M200 150 C 176 158, 162 176, 156 198 M200 120 C 224 128, 238 146, 244 168 M200 150 C 224 158, 238 176, 244 198" stroke="#3E5641" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.75"/>
+            <circle cx="112" cy="250" r="10" fill="#C97B5A"/>
+            <circle cx="300" cy="96" r="7" fill="#C97B5A" opacity="0.8"/>
+          </svg>
+        </div>
+        <div class="approach__body">
+          <p class="eyebrow">The approach</p>
+          <h2 id="approach-h" class="h2">Learn how your body works.</h2>
+          <p>
+            The more you understand the basics of how a body actually works, the better you
+            move — and the more motivated you stay. Every session is education-first: proper
+            technique, real explanation, and steady, sustainable progress that protects you
+            from injury.
+          </p>
+          <ul class="check-list">
+            <li>Guidance, not a treadmill and a shrug</li>
+            <li>Movements matched to your goals, history &amp; any limitations</li>
+            <li>Understand the <em>why</em> behind every exercise</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= OFFERINGS ================= -->
+    <section class="section offerings" id="offerings" aria-labelledby="offerings-h">
+      <div class="container">
+        <div class="center section__head">
+          <p class="eyebrow">What we offer</p>
+          <h2 id="offerings-h" class="h2">Two ways to train.</h2>
+        </div>
+        <div class="cards-2">
+          <article class="offer-card">
+            <span class="offer-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M2 12h2m16 0h2M4 9.5v5m16-5v5M6 8.5v7m12-7v7M9 11h6v2H9z"/></svg>
+            </span>
+            <h3 class="h3">Personal Training</h3>
+            <p>
+              Fully one-on-one sessions tailored to your goals, fitness level, and history.
+              Attentive, hands-on coaching that adapts around injuries and limitations — so
+              you move safely and see real results.
+            </p>
+            <ul class="mini-list">
+              <li>Completely individualized programs</li>
+              <li>Hands-on form &amp; technique coaching</li>
+              <li>Great for beginners, returners &amp; active agers</li>
+            </ul>
+            <a href="#contact" class="link-arrow">Book a session
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+            </a>
+          </article>
+
+          <article class="offer-card">
+            <span class="offer-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M12 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Zm0 0v6m-6-3a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm0 0v5m12-5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm0 0v5M8 21l1.5-4h5L16 21"/></svg>
+            </span>
+            <h3 class="h3">Group Classes</h3>
+            <p>
+              Small, welcoming classes that keep the personal touch — proper coaching, real
+              attention to form, and a supportive, low-pressure atmosphere. The community of a
+              class with the care of private training.
+            </p>
+            <ul class="mini-list">
+              <li>Small groups, never a crowd</li>
+              <li>Encouraging, no-intimidation setting</li>
+              <li>All levels genuinely welcome</li>
+            </ul>
+            <a href="#contact" class="link-arrow">Book a class
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BENEFITS ================= -->
+    <section class="section benefits" aria-labelledby="benefits-h">
+      <div class="container">
+        <div class="center section__head">
+          <p class="eyebrow eyebrow--light">Why Lisa's Studio</p>
+          <h2 id="benefits-h" class="h2 h2--light">Everything the gym isn't.</h2>
+        </div>
+        <div class="benefit-grid">
+          <div class="benefit">
+            <span class="benefit__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-4.5-9-9a4.5 4.5 0 0 1 8-3 4.5 4.5 0 0 1 8 3c-2 4.5-7 9-7 9Z"/></svg></span>
+            <h3>True one-on-one attention</h3>
+            <p>Every session is personal. You're never a face in a crowd.</p>
+          </div>
+          <div class="benefit">
+            <span class="benefit__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M12 3 4 7v5c0 5 3.5 8 8 9 4.5-1 8-4 8-9V7l-8-4Zm-2.5 9 1.8 1.8 3.7-3.8"/></svg></span>
+            <h3>35+ years of expertise</h3>
+            <p>An AFAA-certified instructor who has guided every age and level.</p>
+          </div>
+          <div class="benefit">
+            <span class="benefit__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4 20c1.5-4 4.5-6 8-6s6.5 2 8 6M12 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/></svg></span>
+            <h3>Zero intimidation</h3>
+            <p>No crowds, no ego, no gym anxiety — just a warm, welcoming space.</p>
+          </div>
+          <div class="benefit">
+            <span class="benefit__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M12 3c3 3 4.5 6 4.5 9a4.5 4.5 0 0 1-9 0c0-3 1.5-6 4.5-9Z"/></svg></span>
+            <h3>A calm, natural setting</h3>
+            <p>A private woodland studio — not a fluorescent-lit chain.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MEET LISA ================= -->
+    <section class="section lisa" id="lisa" aria-labelledby="lisa-h">
+      <div class="container grid-2 grid-2--reverse">
+        <div class="lisa__portrait" aria-hidden="true">
+          <div class="portrait-frame">
+            <svg viewBox="0 0 300 340" width="100%" role="img">
+              <rect width="300" height="340" rx="20" fill="#e9e2d4"/>
+              <circle cx="150" cy="130" r="58" fill="#cdb9a3"/>
+              <path d="M92 132 C 92 92, 208 92, 208 132 C 208 108, 190 78, 150 78 C 110 78, 92 108, 92 132 Z" fill="#6f675e"/>
+              <path d="M60 340 C 66 250, 110 210, 150 210 C 190 210, 234 250, 240 340 Z" fill="#3E5641"/>
+              <path d="M150 210 c 0 40, 0 80, 0 130" stroke="#cdb9a3" stroke-width="6" fill="none" opacity="0.5"/>
+            </svg>
+          </div>
+          <span class="portrait-badge">AFAA Certified</span>
+        </div>
+        <div class="lisa__body">
+          <p class="eyebrow">Meet Lisa</p>
+          <h2 id="lisa-h" class="h2">Thirty-five years of moving people well.</h2>
+          <p>
+            Lisa has spent more than three decades helping people of every age and ability
+            feel stronger, move better, and enjoy taking care of themselves. Every session at
+            the studio is led personally — with patience, real expertise, and genuine care.
+          </p>
+          <p>
+            Her philosophy is simple: when you understand your own body, fitness stops being
+            intimidating and starts being something you actually want to do.
+          </p>
+          <a href="#contact" class="btn btn--primary">Train with Lisa</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STUDIO ================= -->
+    <section class="section studio" id="studio" aria-labelledby="studio-h">
+      <div class="container">
+        <div class="center section__head">
+          <p class="eyebrow">The studio &amp; setting</p>
+          <h2 id="studio-h" class="h2">A quiet space in the woods.</h2>
+          <p class="lead-muted narrow center">
+            Set among the trees in West Tisbury, the studio is calm, private, and
+            unhurried — the opposite of a busy gym floor.
+          </p>
+        </div>
+        <div class="studio__gallery">
+          <div class="tile tile--tall">
+            <svg viewBox="0 0 300 400" preserveAspectRatio="none" aria-hidden="true"><rect width="300" height="400" fill="#3E5641"/><path d="M0 300 C 80 250, 160 300, 300 260 L300 400 L0 400 Z" fill="#2C3E2E"/><circle cx="220" cy="90" r="46" fill="#C97B5A" opacity="0.85"/></svg>
+            <span class="tile__label">Woodland light</span>
+          </div>
+          <div class="tile">
+            <svg viewBox="0 0 300 200" preserveAspectRatio="none" aria-hidden="true"><rect width="300" height="200" fill="#8AA089"/><rect x="40" y="120" width="220" height="18" rx="9" fill="#3E5641" opacity="0.6"/></svg>
+            <span class="tile__label">Natural wood floors</span>
+          </div>
+          <div class="tile">
+            <svg viewBox="0 0 300 200" preserveAspectRatio="none" aria-hidden="true"><rect width="300" height="200" fill="#efe6d4"/><path d="M60 150 q 90 -70 180 0" stroke="#C97B5A" stroke-width="10" fill="none" stroke-linecap="round"/></svg>
+            <span class="tile__label">Room to breathe</span>
+          </div>
+          <div class="tile tile--wide">
+            <svg viewBox="0 0 620 200" preserveAspectRatio="none" aria-hidden="true"><rect width="620" height="200" fill="#e9e2d4"/><path d="M0 150 C 160 110, 320 160, 620 120 L620 200 L0 200 Z" fill="#8AA089" opacity="0.7"/></svg>
+            <span class="tile__label">Calm, private &amp; unhurried</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIALS ================= -->
+    <section class="section quotes" aria-labelledby="quotes-h">
+      <div class="container">
+        <div class="center section__head">
+          <p class="eyebrow">Client stories</p>
+          <h2 id="quotes-h" class="h2">Loved by people who "don't do gyms."</h2>
+        </div>
+        <div class="quote-grid">
+          <figure class="quote">
+            <blockquote>"I never lasted a month at any gym. Two years with Lisa and I'm stronger than I've ever been — and I actually look forward to it."</blockquote>
+            <figcaption>— Longtime client, West Tisbury</figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>"After my injury I was nervous to move at all. Lisa explained everything and rebuilt my confidence step by step."</blockquote>
+            <figcaption>— Personal training client</figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>"The small classes feel like they're just for you. No crowds, no pressure — just great coaching."</blockquote>
+            <figcaption>— Group class regular</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="section faq" aria-labelledby="faq-h">
+      <div class="container narrow">
+        <div class="center section__head">
+          <p class="eyebrow">Good to know</p>
+          <h2 id="faq-h" class="h2">Questions, answered.</h2>
+        </div>
+        <div class="accordion" id="accordion">
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false">
+              I've never really worked out. Is this for me?
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-panel"><p>Absolutely — most clients come in feeling exactly that way. Every session starts where you are, with patient, hands-on guidance and zero judgment.</p></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false">
+              What should I bring to my first session?
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-panel"><p>Just comfortable clothes, supportive sneakers, and some water. We'll take care of the rest and talk through your goals when you arrive.</p></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false">
+              Do you work around injuries or health conditions?
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-panel"><p>Yes. Programs are fully tailored around your history, any injuries, and any limitations — safe, gradual progress is the whole point.</p></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false">
+              How do I book, and where are you located?
+              <span class="acc-icon" aria-hidden="true"></span>
+            </button>
+            <div class="acc-panel"><p>Use the form below, call <a href="tel:+15086931009">508-693-1009</a>, or email <a href="mailto:amols@comcast.net">amols@comcast.net</a>. The studio is at 23 Manters Path, West Tisbury, Martha's Vineyard, MA.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT / BOOK ================= -->
+    <section class="section contact" id="contact" aria-labelledby="contact-h">
+      <div class="container grid-2">
+        <div class="contact__info">
+          <p class="eyebrow eyebrow--light">Book a class</p>
+          <h2 id="contact-h" class="h2 h2--light">Come move with us.</h2>
+          <p class="contact__lead">Tell us a little about what you're looking for and we'll be in touch to get you booked. Prefer to talk? Call or email — Lisa answers personally.</p>
+          <ul class="contact__list">
+            <li>
+              <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4 5c0 8.3 6.7 15 15 15a2 2 0 0 0 2-2v-2.3a1 1 0 0 0-.8-1l-3.3-.7a1 1 0 0 0-1 .3l-1 1a12 12 0 0 1-5.5-5.5l1-1a1 1 0 0 0 .3-1L9.3 4.8a1 1 0 0 0-1-.8H6a2 2 0 0 0-2 2Z"/></svg></span>
+              <a href="tel:+15086931009">508-693-1009</a>
+            </li>
+            <li>
+              <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg></span>
+              <a href="mailto:amols@comcast.net">amols@comcast.net</a>
+            </li>
+            <li>
+              <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11Zm0-8.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/></svg></span>
+              <span>23 Manters Path, West Tisbury,<br/>Martha's Vineyard, MA</span>
+            </li>
+          </ul>
+        </div>
+
+        <form class="booking" id="bookingForm" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+            <span class="err" data-for="name"></span>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+              <span class="err" data-for="email"></span>
+            </div>
+            <div class="field">
+              <label for="phone">Phone <span class="opt">(optional)</span></label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="interest">I'm interested in</label>
+            <select id="interest" name="interest">
+              <option value="Personal Training">Personal Training</option>
+              <option value="Group Classes">Group Classes</option>
+              <option value="Not sure yet">Not sure yet — help me choose</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Anything we should know? <span class="opt">(optional)</span></label>
+            <textarea id="message" name="message" rows="3" placeholder="Goals, injuries, questions…"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--lg btn--block">Request my class</button>
+          <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="brand__mark brand__mark--sm" aria-hidden="true">
+          <svg viewBox="0 0 40 40" width="34" height="34"><path d="M8 32 C 8 16, 20 6, 33 7 C 33 22, 22 33, 8 32 Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 30 C 20 24, 26 18, 30 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </span>
+        <div>
+          <p class="footer__name">Lisa's Studio</p>
+          <p class="footer__tag">Your gym alternative.</p>
+        </div>
+      </div>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="#approach">Approach</a>
+        <a href="#offerings">Training</a>
+        <a href="#lisa">About</a>
+        <a href="#studio">The Studio</a>
+        <a href="#contact">Book a Class</a>
+      </nav>
+      <div class="footer__contact">
+        <a href="tel:+15086931009">508-693-1009</a>
+        <a href="mailto:amols@comcast.net">amols@comcast.net</a>
+        <p>23 Manters Path, West Tisbury, MA</p>
+      </div>
+    </div>
+    <div class="footer__base">
+      <p>© <span id="year"></span> Lisa's Studio · Martha's Vineyard</p>
+      <p>Personal Training &amp; Group Fitness</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
