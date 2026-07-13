@@ -1,34 +1,36 @@
-/* Lisa's Studio — script.js */
+/* Lisa's Studio — script.js (shared across all pages) */
 (function () {
   "use strict";
 
   /* ---------- Nav scroll state ---------- */
   const nav = document.getElementById("nav");
-  const onScroll = () => nav.classList.toggle("is-scrolled", window.scrollY > 10);
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
+  if (nav) {
+    const onScroll = () => nav.classList.toggle("is-scrolled", window.scrollY > 10);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
 
   /* ---------- Mobile menu ---------- */
   const toggle = document.getElementById("navToggle");
   const menu = document.getElementById("mobileMenu");
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      const open = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!open));
+      toggle.setAttribute("aria-label", open ? "Open menu" : "Close menu");
+      menu.hidden = open;
+      menu.classList.toggle("is-open", !open);
+    });
 
-  toggle.addEventListener("click", () => {
-    const open = toggle.getAttribute("aria-expanded") === "true";
-    toggle.setAttribute("aria-expanded", String(!open));
-    toggle.setAttribute("aria-label", open ? "Open menu" : "Close menu");
-    menu.hidden = open;
-    menu.classList.toggle("is-open", !open);
-  });
-
-  // Close the menu after choosing a link
-  menu.querySelectorAll("a").forEach((a) =>
-    a.addEventListener("click", () => {
-      toggle.setAttribute("aria-expanded", "false");
-      toggle.setAttribute("aria-label", "Open menu");
-      menu.hidden = true;
-      menu.classList.remove("is-open");
-    })
-  );
+    menu.querySelectorAll("a").forEach((a) =>
+      a.addEventListener("click", () => {
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open menu");
+        menu.hidden = true;
+        menu.classList.remove("is-open");
+      })
+    );
+  }
 
   /* ---------- FAQ accordion ---------- */
   document.querySelectorAll(".acc-trigger").forEach((btn) => {
@@ -36,7 +38,6 @@
       const item = btn.closest(".acc-item");
       const isOpen = item.classList.contains("is-open");
 
-      // Close others so only one is open at a time
       document.querySelectorAll(".acc-item.is-open").forEach((openItem) => {
         openItem.classList.remove("is-open");
         openItem.querySelector(".acc-trigger").setAttribute("aria-expanded", "false");
@@ -53,6 +54,7 @@
   const revealTargets = document.querySelectorAll(
     ".section__head, .grid-2 > *, .offer-card, .benefit, .quote, .acc-item, .booking, .contact__info"
   );
+
   // Elements already on screen (including anchor deep-links) show immediately;
   // everything below the fold animates in on scroll.
   revealTargets.forEach((el) => {
@@ -78,101 +80,102 @@
     revealTargets.forEach((el) => el.classList.add("is-visible"));
   }
 
-  /* ---------- Booking form ---------- */
+  /* ---------- Booking form (contact page only) ---------- */
   const form = document.getElementById("bookingForm");
-  const note = document.getElementById("formNote");
-  const interest = document.getElementById("interest");
-  const poolField = document.getElementById("poolField");
+  if (form) {
+    const note = document.getElementById("formNote");
+    const interest = document.getElementById("interest");
+    const poolField = document.getElementById("poolField");
 
-  const syncPoolField = () => {
-    poolField.hidden = interest.value !== "Private Swim Lessons";
-  };
-  interest.addEventListener("change", syncPoolField);
+    const syncPoolField = () => {
+      poolField.hidden = interest.value !== "Private Swim Lessons";
+    };
+    interest.addEventListener("change", syncPoolField);
 
-  // Offer-card links pre-select the matching service in the form
-  document.querySelectorAll(".book-link").forEach((link) =>
-    link.addEventListener("click", () => {
-      interest.value = link.dataset.interest;
+    // Pre-select the service passed from other pages (?interest=…)
+    const requested = new URLSearchParams(window.location.search).get("interest");
+    if (requested && [...interest.options].some((o) => o.value === requested)) {
+      interest.value = requested;
       syncPoolField();
-    })
-  );
-
-  const setError = (input, message) => {
-    const err = form.querySelector('.err[data-for="' + input.id + '"]');
-    input.classList.toggle("is-invalid", Boolean(message));
-    if (err) {
-      err.textContent = message || "";
-      err.classList.toggle("is-visible", Boolean(message));
     }
-  };
 
-  const validators = {
-    name: (v) => (v.trim() ? "" : "Please tell us your name."),
-    email: (v) =>
-      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())
-        ? ""
-        : "Please enter a valid email so we can reach you.",
-  };
-
-  // Validate on blur, clear as the user fixes things
-  ["name", "email"].forEach((id) => {
-    const input = document.getElementById(id);
-    input.addEventListener("blur", () => setError(input, validators[id](input.value)));
-    input.addEventListener("input", () => {
-      if (input.classList.contains("is-invalid")) {
-        setError(input, validators[id](input.value));
+    const setError = (input, message) => {
+      const err = form.querySelector('.err[data-for="' + input.id + '"]');
+      input.classList.toggle("is-invalid", Boolean(message));
+      if (err) {
+        err.textContent = message || "";
+        err.classList.toggle("is-visible", Boolean(message));
       }
-    });
-  });
+    };
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+    const validators = {
+      name: (v) => (v.trim() ? "" : "Please tell us your name."),
+      email: (v) =>
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())
+          ? ""
+          : "Please enter a valid email so we can reach you.",
+    };
 
-    let firstInvalid = null;
     ["name", "email"].forEach((id) => {
       const input = document.getElementById(id);
-      const message = validators[id](input.value);
-      setError(input, message);
-      if (message && !firstInvalid) firstInvalid = input;
+      input.addEventListener("blur", () => setError(input, validators[id](input.value)));
+      input.addEventListener("input", () => {
+        if (input.classList.contains("is-invalid")) {
+          setError(input, validators[id](input.value));
+        }
+      });
     });
 
-    if (firstInvalid) {
-      firstInvalid.focus();
-      return;
-    }
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-    // No backend yet — hand off to email with the details pre-filled.
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const service = interest.value;
-    const pool = document.getElementById("pool").value.trim();
-    const message = document.getElementById("message").value.trim();
+      let firstInvalid = null;
+      ["name", "email"].forEach((id) => {
+        const input = document.getElementById(id);
+        const message = validators[id](input.value);
+        setError(input, message);
+        if (message && !firstInvalid) firstInvalid = input;
+      });
 
-    const subject = "Booking request from " + name + " — " + service;
-    const bodyLines = [
-      "Hi Lisa,",
-      "",
-      "I'd like to book: " + service,
-      "",
-      "Name: " + name,
-      "Email: " + email,
-      phone ? "Phone: " + phone : "",
-      service === "Private Swim Lessons" && pool ? "Pool location: " + pool : "",
-      message ? "Notes: " + message : "",
-    ].filter(Boolean);
+      if (firstInvalid) {
+        firstInvalid.focus();
+        return;
+      }
 
-    window.location.href =
-      "mailto:amols@comcast.net?subject=" +
-      encodeURIComponent(subject) +
-      "&body=" +
-      encodeURIComponent(bodyLines.join("\n"));
+      // No backend yet — hand off to email with the details pre-filled.
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const service = interest.value;
+      const pool = document.getElementById("pool").value.trim();
+      const message = document.getElementById("message").value.trim();
 
-    note.textContent = "Opening your email app — send the message and we'll get back to you!";
-    form.reset();
-    syncPoolField();
-  });
+      const subject = "Booking request from " + name + " — " + service;
+      const bodyLines = [
+        "Hi Lisa,",
+        "",
+        "I'd like to book: " + service,
+        "",
+        "Name: " + name,
+        "Email: " + email,
+        phone ? "Phone: " + phone : "",
+        service === "Private Swim Lessons" && pool ? "Pool location: " + pool : "",
+        message ? "Notes: " + message : "",
+      ].filter(Boolean);
+
+      window.location.href =
+        "mailto:amols@comcast.net?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        encodeURIComponent(bodyLines.join("\n"));
+
+      note.textContent = "Opening your email app — send the message and we'll get back to you!";
+      form.reset();
+      syncPoolField();
+    });
+  }
 
   /* ---------- Footer year ---------- */
-  document.getElementById("year").textContent = new Date().getFullYear();
+  const year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
 })();
