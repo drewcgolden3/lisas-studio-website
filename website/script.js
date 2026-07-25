@@ -1,4 +1,4 @@
-/* Lisa's Studio — script.js (shared across all pages) */
+/* Lisa's Studio - script.js (shared across all pages) */
 (function () {
   "use strict";
 
@@ -182,7 +182,7 @@
         return;
       }
 
-      // No backend yet — hand off to email with the details pre-filled.
+      // No backend yet. Hand off to email with the details pre-filled.
       const name = document.getElementById("name").value.trim();
       const email = document.getElementById("email").value.trim();
       const phone = document.getElementById("phone").value.trim();
@@ -190,7 +190,7 @@
       const pool = document.getElementById("pool").value.trim();
       const message = document.getElementById("message").value.trim();
 
-      const subject = "Booking request from " + name + " — " + service;
+      const subject = "Booking request from " + name + " for " + service;
       const bodyLines = [
         "Hi Lisa,",
         "",
@@ -209,7 +209,7 @@
         "&body=" +
         encodeURIComponent(bodyLines.join("\n"));
 
-      note.textContent = "Opening your email app — send the message and we'll get back to you!";
+      note.textContent = "Opening your email app. Send the message and we'll get back to you!";
       form.reset();
       syncPoolField();
     });
