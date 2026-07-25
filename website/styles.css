@@ -1227,6 +1227,8 @@ p { margin: 0 0 1em; }
   font-size: 13.5px;
   color: rgba(247, 243, 236, 0.6);
 }
+.footer__credit a { color: rgba(247, 243, 236, 0.8); font-weight: 600; }
+.footer__credit a:hover { color: #E5B79F; }
 
 /* ---------- Reveal on scroll ---------- */
 .reveal {
