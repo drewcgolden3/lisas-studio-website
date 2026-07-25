@@ -64,7 +64,7 @@
       <div class="container">
         <p class="eyebrow">Get started</p>
         <h1 class="page-hero__title">Book your free consultation.</h1>
-        <p class="lead-muted">Every new client starts with a free consult — a relaxed call to hear your goals and find the right path. Pick a time below, call Lisa directly, or send a request and she'll reach out.</p>
+        <p class="lead-muted">Every new client starts with a free consult — a relaxed call to hear your goals and find the right path. Pick a time below, or call Lisa directly.</p>
       </div>
     </header>
 
@@ -143,17 +143,17 @@
 
         <p class="book__note" id="bookNote">
           Online scheduling is coming soon. For now, <a href="tel:+15086931009">call 508-693-1009</a>
-          or send the quick request below and Lisa will set up your free consult.
+          and Lisa will set up your free consult.
         </p>
       </div>
     </section>
 
-    <section class="section contact" id="contact">
-      <div class="container grid-2">
+    <section class="section contact contact--center" id="contact">
+      <div class="container narrow center">
         <div class="contact__info">
-          <p class="eyebrow eyebrow--light">Book &amp; contact</p>
-          <h2 class="h2 h2--light">Reach Lisa directly.</h2>
-          <p class="contact__lead">Questions about training, classes, or swim lessons — or ready to book? Call, email, or use the form.</p>
+          <p class="eyebrow eyebrow--light">Or reach Lisa directly</p>
+          <h2 class="h2 h2--light">Questions before you book?</h2>
+          <p class="contact__lead">Not sure which option is right, or just want to talk it through first? Call and Lisa will answer personally — or drop her an email.</p>
           <a href="tel:+15086931009" class="btn btn--primary btn--lg contact__call">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 5c0 8.3 6.7 15 15 15a2 2 0 0 0 2-2v-2.3a1 1 0 0 0-.8-1l-3.3-.7a1 1 0 0 0-1 .3l-1 1a12 12 0 0 1-5.5-5.5l1-1a1 1 0 0 0 .3-1L9.3 4.8a1 1 0 0 0-1-.8H6a2 2 0 0 0-2 2Z"/></svg>
             Call 508-693-1009
@@ -165,50 +165,10 @@
             </li>
             <li>
               <span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11Zm0-8.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/></svg></span>
-              <span>23 Manters Path, West Tisbury,<br/>Martha's Vineyard, MA</span>
+              <span>23 Manters Path, West Tisbury, Martha's Vineyard, MA</span>
             </li>
           </ul>
         </div>
-
-        <form class="booking" id="bookingForm" novalidate>
-          <h3 class="booking__title">Request a consultation</h3>
-          <p class="booking__sub">Prefer Lisa to reach out? Send this and she'll set up your free consult.</p>
-          <div class="field">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" autocomplete="name" required />
-            <span class="err" data-for="name"></span>
-          </div>
-          <div class="field-row">
-            <div class="field">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" autocomplete="email" required />
-              <span class="err" data-for="email"></span>
-            </div>
-            <div class="field">
-              <label for="phone">Phone <span class="opt">(optional)</span></label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel" />
-            </div>
-          </div>
-          <div class="field">
-            <label for="interest">I'm interested in</label>
-            <select id="interest" name="interest">
-              <option value="Personal Training">Personal Training</option>
-              <option value="Group Classes">Group Classes</option>
-              <option value="Private Swim Lessons">Private Swim Lessons (at your pool)</option>
-              <option value="Not sure yet">Not sure yet — help me choose</option>
-            </select>
-          </div>
-          <div class="field field--pool" id="poolField" hidden>
-            <label for="pool">Where is your pool?</label>
-            <input id="pool" name="pool" type="text" placeholder="Town / neighborhood on the Vineyard" />
-          </div>
-          <div class="field">
-            <label for="message">Anything we should know? <span class="opt">(optional)</span></label>
-            <textarea id="message" name="message" rows="3" placeholder="Goals, injuries, ages of swimmers, questions…"></textarea>
-          </div>
-          <button type="submit" class="btn btn--secondary btn--lg btn--block">Send booking request</button>
-          <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
-        </form>
       </div>
     </section>
 

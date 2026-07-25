@@ -766,6 +766,16 @@ p { margin: 0 0 1em; }
   max-width: 420px;
 }
 
+/* Centered variant (contact page, when the form is not present) */
+.contact--center .contact__lead { margin-left: auto; margin-right: auto; }
+.contact--center .contact__list {
+  align-items: center;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contact--center .contact__list li { text-align: left; }
+
 .contact__call { margin: 6px 0 8px; }
 
 .contact__list {
