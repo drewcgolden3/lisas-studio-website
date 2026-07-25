@@ -310,8 +310,9 @@ p { margin: 0 0 1em; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Keep Lisa (seated ~40% across the photo) right of the headline text */
-  object-position: 12% center;
+  /* Studio panorama: bias toward the warm center-right (Lisa + ball shelf),
+     leaving the washed-out left side clear behind the headline text. */
+  object-position: 64% center;
 }
 
 .hero__scrim {
@@ -359,6 +360,17 @@ p { margin: 0 0 1em; }
   margin-bottom: 40px;
 }
 
+.hero__note {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: -20px 0 34px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--forest);
+}
+.hero__note svg { width: 16px; height: 16px; color: var(--terracotta); flex: none; }
+
 .hero__trust {
   list-style: none;
   display: flex;
@@ -400,6 +412,13 @@ p { margin: 0 0 1em; }
 .cta-band {
   background: var(--cream);
   border-top: 1px solid var(--oat);
+}
+.cta-band__lead {
+  max-width: 560px;
+  margin: 0 auto;
+  color: var(--stone);
+  font-size: 17px;
+  line-height: 1.7;
 }
 .cta-band__actions {
   display: flex;
@@ -847,6 +866,205 @@ p { margin: 0 0 1em; }
   min-height: 1.4em;
 }
 
+/* ---------- Free consultation callout (training) ---------- */
+.consult-note {
+  margin: 4px 0 22px;
+  padding: 16px 18px;
+  background: rgba(138, 160, 137, 0.16);
+  border: 1px solid rgba(138, 160, 137, 0.4);
+  border-left: 4px solid var(--sage);
+  border-radius: var(--radius-sm);
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--pine);
+}
+.consult-note strong { color: var(--forest); }
+
+/* ---------- Booking section + Calendly mockup ---------- */
+.book { background: var(--cream); }
+.book__intro { max-width: 620px; margin-left: auto; margin-right: auto; }
+
+.cal-card {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  background: var(--sand);
+  border: 1px solid var(--oat);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lift);
+  overflow: hidden;
+}
+
+.cal-card__preview {
+  position: absolute;
+  top: 16px;
+  right: -34px;
+  transform: rotate(45deg);
+  background: var(--terracotta);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 6px 44px;
+  box-shadow: 0 6px 16px rgba(201, 123, 90, 0.4);
+  z-index: 2;
+}
+
+.cal-card__aside {
+  padding: 30px 28px;
+  border-right: 1px solid var(--oat);
+  background: linear-gradient(180deg, #f2ecdf 0%, var(--sand) 100%);
+}
+.cal-card__brand {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+.cal-card__event {
+  font-family: var(--font-head);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--forest);
+  margin: 6px 0 16px;
+}
+.cal-card__meta {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+.cal-card__meta li {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--pine);
+}
+.cal-card__meta svg { width: 19px; height: 19px; color: var(--sage); flex: none; }
+.cal-card__desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--stone);
+}
+
+.cal-card__picker { padding: 26px 28px 30px; }
+.cal-card__picker-title {
+  font-family: var(--font-head);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--forest);
+  margin: 0 0 16px;
+}
+.cal-card__month {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: var(--pine);
+}
+.cal-card__month span { font-size: 15px; }
+.cal-card__month i {
+  font-style: normal;
+  color: var(--stone);
+  font-size: 18px;
+  padding: 0 6px;
+}
+
+/* Non-interactive preview grid */
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 20px;
+}
+.cal-grid .dow {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--stone);
+  padding-bottom: 4px;
+}
+.cal-day {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--bark);
+}
+.cal-day.is-muted { color: #c9bfae; }
+.cal-day.is-avail {
+  background: rgba(201, 123, 90, 0.12);
+  color: var(--clay);
+  font-weight: 600;
+}
+.cal-day.is-selected {
+  background: var(--terracotta);
+  color: #fff;
+  font-weight: 700;
+}
+
+.cal-times {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.cal-time {
+  padding: 12px;
+  border: 1.5px solid var(--oat);
+  border-radius: var(--radius-sm);
+  background: var(--cream);
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--pine);
+  text-align: center;
+}
+.cal-time.is-selected {
+  border-color: var(--terracotta);
+  background: rgba(201, 123, 90, 0.12);
+  color: var(--clay);
+}
+
+/* The whole preview grid is illustrative only */
+.cal-card__picker [aria-hidden="true"] { pointer-events: none; user-select: none; }
+
+.cal-card__link {
+  display: block;
+  text-decoration: none;
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+.cal-card__link:hover {
+  text-decoration: none;
+  transform: translateY(-3px);
+}
+.cal-card__link:hover .cal-card { box-shadow: 0 18px 48px rgba(42, 38, 34, 0.18); }
+
+.book__note {
+  max-width: 640px;
+  margin: 26px auto 0;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--stone);
+}
+.book__note a { font-weight: 600; }
+
 /* ---------- Footer ---------- */
 .footer {
   background: var(--pine);
@@ -989,6 +1207,10 @@ p { margin: 0 0 1em; }
 
   .offer-card { padding: 32px 26px; }
   .booking { padding: 30px 22px; }
+
+  .cal-card { grid-template-columns: 1fr; }
+  .cal-card__aside { border-right: 0; border-bottom: 1px solid var(--oat); }
+  .cal-card__preview { top: 12px; right: -36px; padding: 6px 46px; }
 
   .footer__inner { grid-template-columns: 1fr; gap: 32px; }
   .footer__base { flex-direction: column; }

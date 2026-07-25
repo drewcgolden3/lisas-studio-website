@@ -2,6 +2,46 @@
 (function () {
   "use strict";
 
+  /* ============================================================
+     BOOKING / CALENDLY
+     When Lisa's Calendly (or other scheduler) is ready, paste the
+     link below. Every "Book a free consultation" button across the
+     site will then open it in a new tab, and the on-page scheduler
+     preview turns into a live "Open the scheduler" link.
+     Leave it as an empty string to keep the current preview/mockup.
+     Example: "https://calendly.com/lisas-studio/free-consultation"
+     ============================================================ */
+  const CALENDLY_URL = "";
+
+  if (CALENDLY_URL) {
+    document.querySelectorAll("a.js-book").forEach((a) => {
+      a.setAttribute("href", CALENDLY_URL);
+      a.setAttribute("target", "_blank");
+      a.setAttribute("rel", "noopener");
+    });
+
+    // Turn the on-page preview into a live entry point.
+    const calCard = document.querySelector(".cal-card");
+    if (calCard) {
+      const badge = calCard.querySelector(".cal-card__preview");
+      if (badge) badge.remove();
+      const link = document.createElement("a");
+      link.href = CALENDLY_URL;
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.className = "cal-card__link";
+      link.setAttribute("aria-label", "Open the online scheduler to book your free consultation");
+      calCard.parentNode.insertBefore(link, calCard);
+      link.appendChild(calCard);
+    }
+    const bookNote = document.getElementById("bookNote");
+    if (bookNote) {
+      bookNote.innerHTML =
+        'Prefer to talk first? <a href="tel:+15086931009">Call 508-693-1009</a> ' +
+        "or send the quick request below and Lisa will follow up.";
+    }
+  }
+
   /* ---------- Nav scroll state ---------- */
   const nav = document.getElementById("nav");
   if (nav) {

@@ -38,9 +38,9 @@
         <a href="contact.html" class="is-active" aria-current="page">Contact</a>
       </nav>
 
-      <a href="tel:+15086931009" class="btn btn--primary nav__cta">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 5c0 8.3 6.7 15 15 15a2 2 0 0 0 2-2v-2.3a1 1 0 0 0-.8-1l-3.3-.7a1 1 0 0 0-1 .3l-1 1a12 12 0 0 1-5.5-5.5l1-1a1 1 0 0 0 .3-1L9.3 4.8a1 1 0 0 0-1-.8H6a2 2 0 0 0-2 2Z"/></svg>
-        Call the Studio
+      <a href="#book" class="btn btn--primary nav__cta js-book">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M7 3v3m10-3v3M4 8h16M5 6h14a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Z"/></svg>
+        Book a free consult
       </a>
 
       <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
@@ -54,8 +54,8 @@
       <a href="about.html">About</a>
       <a href="studio.html">The Studio</a>
       <a href="contact.html" class="is-active" aria-current="page">Contact</a>
-      <a href="tel:+15086931009" class="btn btn--primary">Call 508-693-1009</a>
-      <a href="contact.html" class="btn btn--ghost">Request a booking</a>
+      <a href="#book" class="btn btn--primary js-book">Book a free consult</a>
+      <a href="tel:+15086931009" class="btn btn--ghost">Call 508-693-1009</a>
     </div>
   </header>
 
@@ -63,10 +63,90 @@
     <header class="page-hero">
       <div class="container">
         <p class="eyebrow">Get started</p>
-        <h1 class="page-hero__title">Come move with us.</h1>
-        <p class="lead-muted">The fastest way to book is a quick call — Lisa answers personally. Or send a booking request and she'll get back to you.</p>
+        <h1 class="page-hero__title">Book your free consultation.</h1>
+        <p class="lead-muted">Every new client starts with a free consult — a relaxed call to hear your goals and find the right path. Pick a time below, call Lisa directly, or send a request and she'll reach out.</p>
       </div>
     </header>
+
+    <section class="section book" id="book">
+      <div class="container">
+        <div class="center section__head">
+          <p class="eyebrow">Free consultation</p>
+          <h2 class="h2">Grab a time with Lisa.</h2>
+          <p class="lead-muted book__intro">A friendly 20-minute call, completely free. Lisa hears your goals, needs, and history, then helps you choose the right path to success — before you book a single session.</p>
+        </div>
+
+        <div class="cal-card" role="img" aria-label="Preview of the online consultation scheduler — coming soon.">
+          <span class="cal-card__preview">Preview</span>
+          <div class="cal-card__aside">
+            <span class="cal-card__brand">Lisa's Studio</span>
+            <h3 class="cal-card__event">Free Consultation</h3>
+            <ul class="cal-card__meta">
+              <li><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 2M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/></svg>20 minutes</li>
+              <li><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4 5c0 8.3 6.7 15 15 15a2 2 0 0 0 2-2v-2.3a1 1 0 0 0-.8-1l-3.3-.7a1 1 0 0 0-1 .3l-1 1a12 12 0 0 1-5.5-5.5l1-1a1 1 0 0 0 .3-1L9.3 4.8a1 1 0 0 0-1-.8H6a2 2 0 0 0-2 2Z"/></svg>Phone call</li>
+              <li><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4 20c1.5-4 4.5-6 8-6s6.5 2 8 6M12 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/></svg>with Lisa</li>
+            </ul>
+            <p class="cal-card__desc">A no-pressure conversation about what you're looking for and how the studio can help.</p>
+          </div>
+          <div class="cal-card__picker">
+            <p class="cal-card__picker-title">Select a date &amp; time</p>
+            <div class="cal-card__month" aria-hidden="true">
+              <span>July 2026</span>
+              <span><i>&lsaquo;</i><i>&rsaquo;</i></span>
+            </div>
+            <div class="cal-grid" aria-hidden="true">
+              <span class="dow">S</span><span class="dow">M</span><span class="dow">T</span><span class="dow">W</span><span class="dow">T</span><span class="dow">F</span><span class="dow">S</span>
+          <span class="cal-day is-muted"></span>
+          <span class="cal-day is-muted"></span>
+          <span class="cal-day is-muted"></span>
+          <span class="cal-day is-muted">1</span>
+          <span class="cal-day is-muted">2</span>
+          <span class="cal-day is-muted">3</span>
+          <span class="cal-day is-muted">4</span>
+          <span class="cal-day is-muted">5</span>
+          <span class="cal-day is-muted">6</span>
+          <span class="cal-day is-muted">7</span>
+          <span class="cal-day is-muted">8</span>
+          <span class="cal-day is-muted">9</span>
+          <span class="cal-day is-muted">10</span>
+          <span class="cal-day is-muted">11</span>
+          <span class="cal-day is-muted">12</span>
+          <span class="cal-day is-muted">13</span>
+          <span class="cal-day">14</span>
+          <span class="cal-day is-avail">15</span>
+          <span class="cal-day is-selected">16</span>
+          <span class="cal-day is-avail">17</span>
+          <span class="cal-day">18</span>
+          <span class="cal-day">19</span>
+          <span class="cal-day">20</span>
+          <span class="cal-day is-avail">21</span>
+          <span class="cal-day is-avail">22</span>
+          <span class="cal-day is-avail">23</span>
+          <span class="cal-day is-avail">24</span>
+          <span class="cal-day">25</span>
+          <span class="cal-day">26</span>
+          <span class="cal-day">27</span>
+          <span class="cal-day is-avail">28</span>
+          <span class="cal-day is-avail">29</span>
+          <span class="cal-day is-avail">30</span>
+          <span class="cal-day">31</span>
+          <span class="cal-day is-muted"></span>
+            </div>
+            <div class="cal-times" aria-hidden="true">
+              <span class="cal-time">9:00 am</span>
+              <span class="cal-time is-selected">10:30 am</span>
+              <span class="cal-time">1:00 pm</span>
+              <span class="cal-time">3:30 pm</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="book__note" id="bookNote">
+          Online scheduling is coming soon. For now, <a href="tel:+15086931009">call 508-693-1009</a>
+          or send the quick request below and Lisa will set up your free consult.
+        </p>
+      </div>
+    </section>
 
     <section class="section contact" id="contact">
       <div class="container grid-2">
@@ -91,8 +171,8 @@
         </div>
 
         <form class="booking" id="bookingForm" novalidate>
-          <h3 class="booking__title">Request a booking</h3>
-          <p class="booking__sub">Prefer not to call? Send this and Lisa will follow up.</p>
+          <h3 class="booking__title">Request a consultation</h3>
+          <p class="booking__sub">Prefer Lisa to reach out? Send this and she'll set up your free consult.</p>
           <div class="field">
             <label for="name">Name</label>
             <input id="name" name="name" type="text" autocomplete="name" required />
