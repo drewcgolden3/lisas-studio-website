@@ -310,9 +310,9 @@ p { margin: 0 0 1em; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Studio panorama: bias toward the warm center-right (Lisa + ball shelf),
-     leaving the washed-out left side clear behind the headline text. */
-  object-position: 64% center;
+  /* Studio photo: Lisa is seated on the right, so bias the crop rightward
+     to keep her in frame while the headline sits over the calmer left side. */
+  object-position: 62% center;
 }
 
 .hero__scrim {
