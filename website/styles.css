@@ -212,6 +212,7 @@ p { margin: 0 0 1em; }
 .brand:hover { text-decoration: none; }
 
 .brand__mark { color: var(--forest); }
+.brand__logo { height: 46px; width: auto; display: block; }
 .brand__mark--sm { color: currentColor; }
 
 .brand__text { display: flex; flex-direction: column; line-height: 1.15; }
